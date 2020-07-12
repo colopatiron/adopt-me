@@ -7,13 +7,15 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'eslint-config-prettier',
+    'plugin:jsx-a11y/recommended',
+
+    // these need to be at the end
     'prettier',
     'prettier/react',
   ],
   settings: {
     // Ensure you're defining the correct React version here
-    react: { version: '16.5.0' },
+    react: { version: 'detect' },
   },
   parserOptions: {
     // Enable JSX support
@@ -21,10 +23,10 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'jsx-a11y'],
   parser: 'babel-eslint',
   rules: {
-    // Add any additional rules here
     'react/prop-types': 0,
+    'no-console': 1,
   },
 }
