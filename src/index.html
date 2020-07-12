@@ -20,11 +20,13 @@
     <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"></script>
     <script>
       const App = () => {
-        const message = "Adopt me!"
         return React.createElement(
           "div",
-          {},
-          React.createElement("h1", {}. message)
+          {id: "an-id"},
+          [
+            React.createElement("h1", {}, "Adopt me!"),
+            React.createElement("h2", {}, "This is a taglne")
+          ]
         );
       };
       ReactDOM.render(
