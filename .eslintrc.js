@@ -25,6 +25,6 @@ module.exports = {
   parser: 'babel-eslint',
   rules: {
     // Add any additional rules here
-    // 'react/prop-types': 0,
+    'react/prop-types': 0,
   },
 }
