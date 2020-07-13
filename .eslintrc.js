@@ -18,14 +18,16 @@ module.exports = {
     react: { version: 'detect' },
   },
   parserOptions: {
-    // Enable JSX support
     ecmaFeatures: { jsx: true },
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y'],
+  plugins: ['react', 'jsx-a11y', 'react-hooks'],
   parser: 'babel-eslint',
   rules: {
+    // 0: off, 1: warn, 2: error
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 1,
     'react/prop-types': 0,
     'no-console': 1,
   },
