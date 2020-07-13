@@ -8,6 +8,7 @@ const SearchParams = () => {
   return (
     <div className='search-params'>
       <h1>Location: {location}</h1>
+      <h1>Animal: {animal}</h1>
       <form>
         <label htmlFor='location'>
           Location
@@ -22,13 +23,15 @@ const SearchParams = () => {
           Animal
           <select
             id='animal'
-            value='animal'
+            value={animal}
             onChange={(e) => setAnimal(e.target.value)}
             onBlur={(e) => setAnimal(e.target.value)}
           >
             <option>All</option>
             {ANIMALS.map((animal) => (
-              <option value={animal}>{animal}</option>
+              <option key={animal} value={animal}>
+                {animal}
+              </option>
             ))}
           </select>
         </label>
