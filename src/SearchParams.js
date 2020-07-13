@@ -3,7 +3,7 @@ import pet, { ANIMALS } from '@frontendmasters/pet'
 import useDropDown from './useDropdown'
 
 const SearchParams = () => {
-  const [location, setLocation] = useState('New York, NY')
+  const [location, setLocation] = useState('Seattle, WA')
   const [breeds, setBreeds] = useState([])
   const [animal, AnimalDropdown] = useDropDown('Animal', 'dog', ANIMALS)
   const [breed, BreedDropdown, setBreed] = useDropDown('Breed', '', breeds)
@@ -18,7 +18,7 @@ const SearchParams = () => {
       const breedStrings = breeds.map(({ name }) => name)
       setBreeds(breedStrings)
     }, console.error)
-  }, [animal, setBreed, setBreeds])
+  }, [animal, setBreed, setBreeds]) // set dependencies to [] if you want the effect to run only once
 
   return (
     <div className='search-params'>
